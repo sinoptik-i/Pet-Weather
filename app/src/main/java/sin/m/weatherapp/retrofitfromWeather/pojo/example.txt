@@ -1,0 +1,36 @@
+{
+    "coord":{
+        "lon":39.5708,
+        "lat":52.6031},
+    "weather":[{
+        "id":500,
+        "main":"Rain",
+        "description":"light rain",
+        "icon":"10d"}],
+    "base":"stations",
+    "main":{
+        "temp":292.75,
+        "feels_like":292.85,
+        "temp_min":292.75,
+        "temp_max":292.75,
+        "pressure":1007,
+        "humidity":80,
+        "sea_level":1007,
+        "grnd_level":989},
+    "visibility":10000,
+    "wind":{
+        "speed":2.4,
+        "deg":48,
+        "gust":3.04},
+    "rain":{"1h":0.87},
+    "clouds":{"all":78},
+    "dt":1623254370,
+    "sys":{
+        "country":"RU",
+        "sunrise":1623200365,
+        "sunset":1623260565},
+    "timezone":10800,
+    "id":535121,
+    "name":"Lipetsk",
+    "cod":200
+}
