@@ -25,7 +25,7 @@ open class DBForExtentionsAndFeauchers(context: Context) :
     override fun onCreate(db: SQLiteDatabase) {
         val CREATE_CONTACTS_TABLE = ("CREATE TABLE " + TABLE_WEATHER + "("
                 + KEY_ID_TIME + " INTEGER PRIMARY KEY," + KEY_TEMP + " REAL,"
-                + KEY_WEATHER_TYPE + " TEXT" + KEY_DESCR + " TEXT" + ")")
+                + KEY_WEATHER_TYPE + " TEXT," + KEY_DESCR + " TEXT" + ")")
         db.execSQL(CREATE_CONTACTS_TABLE)
     }
 
@@ -49,5 +49,17 @@ open class DBForExtentionsAndFeauchers(context: Context) :
         cursor.getString(2),
         cursor.getString(3)
     )
+
+/*
+    protected fun inflateWeatherSaveble(cursor: Cursor): WeatherSaveble {
+     val ws   = WeatherSaveble(
+            cursor.getInt(0).toLong(),
+            cursor.getDouble(1),
+            cursor.getString(2),
+            cursor.getString(3)
+        )
+        return ws
+    }
+*/
 
 }

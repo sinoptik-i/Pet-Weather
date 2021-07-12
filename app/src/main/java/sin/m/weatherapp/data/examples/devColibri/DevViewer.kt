@@ -8,7 +8,7 @@ import kotlin.collections.ArrayList
 
 class DevViewer(
     context: Context,
-    var versionNum: Int = 1
+    var versionNum: Int = 2
 ) {
     var versions: MutableList<IDatabaseHandler>
 
@@ -16,6 +16,7 @@ class DevViewer(
         versions = ArrayList()
         versions.add(DBAndroid1(context))
         versions.add(DBAndroid2(context))
+        versions.add(DBAndroid(context))
     }
 
     fun add() {

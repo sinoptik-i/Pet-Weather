@@ -1,6 +1,5 @@
 package sin.m.weatherapp
 
-import android.content.Context
 import android.widget.DatePicker
 import retrofitfromWeather.pojo.WeatherINeed
 import sin.m.weatherapp.data.storage.sqlite.WeatherSaveble
@@ -67,5 +66,12 @@ fun  dayBordersTimestamp():Pair<Long,Long> {
     end.endOfDay()
     return Pair(begin.time.time, end.time.time) //: Pair<Long,Long>
 }
+
+fun Long.toStringDate()=Date(this)?.toString()
+
+/*String{
+    val date=Date(this)
+    return date.toString(formatter)
+}*/
 
 

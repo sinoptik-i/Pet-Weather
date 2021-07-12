@@ -38,6 +38,12 @@
             android:text="button_clear"></Button>
 
         <Button
+            android:id="@+id/button_today"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="button_today"></Button>
+
+        <Button
             android:id="@+id/button_OneMore"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

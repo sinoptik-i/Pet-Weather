@@ -44,13 +44,13 @@ class DBAndroid(context: Context) :
         )
         if (cursor == null) return null
         cursor.moveToFirst()
-        ContactsContract.Contacts.PHOTO_FILE_ID
+      /*  ContactsContract.Contacts.PHOTO_FILE_ID
 
         db.query("")
 
         val photoFileIdIndex = cursor.getColumnIndex(ContactsContract.Contacts.PHOTO_FILE_ID)
         cursor.getString(photoFileIdIndex)
-        cursor.getString("_name")
+        cursor.getString("_name")*/
 
         return cursor?.getString(0)?.toInt()
             ?.let { Contact(it, cursor?.getString(1), cursor?.getString(2)) }
@@ -72,13 +72,12 @@ class DBAndroid(context: Context) :
 //Курсор - это набор строк в табличном виде
 
     override fun getAllContacts() = readableDatabase.query(
-         TABLE_CONTACTS,
-         arrayOf(
+        TABLE_CONTACTS,
+        arrayOf(
             KEY_ID, KEY_NAME, KEY_PH_NO
         )
-        ,
-         "$KEY_ID > ?",
-        arrayOf("5".toString())
+        /*, "$KEY_ID > ?",
+        arrayOf("5".toString())*/
     )?.use {
         it.toIterable().map { cursor ->
             inflateContact(cursor)
@@ -86,8 +85,8 @@ class DBAndroid(context: Context) :
     } ?: emptyList()
 
 
-    var q="SELECT * FROM $TABLE_CONTACTS WHERE $KEY_ID BETWEEN 3 AND 6"
-    var selection:String ="$KEY_ID > ? AND $KEY_ID < ?"
+    var q = "SELECT * FROM $TABLE_CONTACTS WHERE $KEY_ID BETWEEN 3 AND 6"
+    var selection: String = "$KEY_ID > ? AND $KEY_ID < ?"
 //    var selection:String ="$KEY_ID > ? AND $KEY_ID < ?"
 
 
@@ -96,8 +95,8 @@ class DBAndroid(context: Context) :
         columns = arrayOf(
             KEY_ID, KEY_NAME, KEY_PH_NO
         ),
-        selection =    selection,
-        selectionArgs =  arrayOf( "6","10")
+        selection = selection,
+        selectionArgs = arrayOf("6", "10")
 //              selectionArgs =  arrayOf( "6")
     )?.use {
         it.toIterable().map { cursor ->
@@ -106,7 +105,7 @@ class DBAndroid(context: Context) :
     }
 
 
-    fun printCont(){
+    fun printCont() {
         getAnyContacts()?.map { contact ->
             println(contact)
         }

@@ -22,7 +22,6 @@ class DBAndroid2(context: Context) :
             TABLE_CONTACTS,
         null,
         inflateContentValues(contact))
-
     }
 
     override fun getContact(id: Int): Contact? {
